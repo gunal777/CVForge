@@ -1,16 +1,98 @@
-# React + Vite
+# CVForger Builder (React)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A simple CV / Resume Builder built using **React**.  
+Users can enter their personal details, education, and experience, preview the resume live, and export it using the browser’s print / save-as-PDF feature.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## ✨ Features
 
-## React Compiler
+- 🧑 General Information section (Name, Email, Phone)
+- 🎓 Education section (multiple entries supported)
+- 💼 Experience section (multiple entries supported)
+- 👀 Live resume preview
+- 🖨️ Print / Save resume as PDF
+- 🎨 Clean UI with form panels and a resume preview
+- 📄 Print-only styling (only the resume is printed)
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## Project Structure
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+```
+src/
+├── components/
+│   ├── eduDetails.jsx
+│   ├── expDetails.jsx
+│   ├── generalDetails.jsx
+│   └── preview.jsx
+├── App.jsx
+├── App.css
+├── main.jsx
+└── index.css
+```
+
+---
+
+## Getting Started
+
+### Clone the repository
+
+```bash
+git clone https://github.com/your-username/cv-builder.git
+cd cv-builder
+```
+
+### Install dependencies
+
+```bash
+npm install
+```
+
+### Start the development server
+
+```bash
+npm run dev
+```
+
+Open the app in your browser at:
+
+```
+http://localhost:5173
+```
+
+---
+
+## Export as PDF
+
+The resume can be exported using the browser’s built-in print feature.
+
+1. Click the **Export / Print** button
+2. Choose **Save as PDF**
+3. Select layout options (A4 recommended)
+4. Save
+
+You can also apply print-specific CSS using `@media print` to format only the resume preview.
+
+---
+
+## Technologies Used
+
+- React
+- JavaScript (ES6+)
+- CSS
+- Vite
+
+---
+
+## Notes
+
+- State is managed in the parent component and passed down as props
+- Education and Experience forms use local state with a **Save** button
+- Preview layout is isolated from form styling
+
+---
+
+## License
+
+This project is open source and free to use for learning and personal projects.

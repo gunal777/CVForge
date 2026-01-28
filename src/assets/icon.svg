@@ -1,0 +1,61 @@
+<svg width="128" height="128" viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background gradient circle -->
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#667eea"/>
+      <stop offset="50%" style="stop-color:#764ba2"/>
+      <stop offset="100%" style="stop-color:#f093fb"/>
+    </linearGradient>
+    
+    <linearGradient id="paperGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ffffff"/>
+      <stop offset="100%" style="stop-color:#f8f9ff"/>
+    </linearGradient>
+  </defs>
+  
+  <!-- Main background circle -->
+  <circle cx="64" cy="64" r="60" fill="url(#bgGrad)" stroke="rgba(255,255,255,0.3)" stroke-width="2"/>
+  
+  <!-- Resume paper/document -->
+  <rect x="28" y="28" width="72" height="72" rx="8" fill="url(#paperGrad)" stroke="#e0e7ff" stroke-width="3"/>
+  
+  <!-- Paper shadow -->
+  <rect x="30" y="30" width="72" height="72" rx="8" fill="rgba(0,0,0,0.1)" opacity="0.3"/>
+  
+  <!-- Fold corner -->
+  <path d="M 88 28 Q 94 32 92 38 L 92 38" fill="#d1d5ff" stroke="#b3b8ff" stroke-width="1"/>
+  
+  <!-- Resume title text -->
+  <text x="64" y="48" text-anchor="middle" font-family="'Inter', Arial, sans-serif" font-size="14" font-weight="700" fill="#1e293b">RESUME</text>
+  
+  <!-- Section lines -->
+  <line x1="35" y1="55" x2="93" y2="55" stroke="#cbd5e1" stroke-width="1.5"/>
+  <line x1="35" y1="72" x2="93" y2="72" stroke="#cbd5e1" stroke-width="1.5"/>
+  <line x1="35" y1="89" x2="93" y2="89" stroke="#cbd5e1" stroke-width="1.5"/>
+  
+  <!-- Section icons -->
+  <g transform="translate(42,62)">
+    <!-- User icon -->
+    <circle cx="6" cy="4" r="4" fill="#64748b"/>
+    <path d="M 4 10 Q 6 12 8 10" stroke="#64748b" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+  </g>
+  
+  <g transform="translate(42,78)">
+    <!-- Briefcase -->
+    <rect x="1" y="4" width="12" height="6" rx="1" fill="#475569"/>
+    <rect x="4" y="1" width="6" height="4" rx="0.5" fill="#475569"/>
+    <path d="M 3 10 L 11 10" stroke="#64748b" stroke-width="1.5" stroke-linecap="round"/>
+  </g>
+  
+  <g transform="translate(42,95)">
+    <!-- Graduation cap -->
+    <path d="M 1 2 L 13 2 L 7 8 Z" fill="#64748b" stroke="#475569" stroke-width="0.5"/>
+    <circle cx="7" cy="11" r="2.5" fill="#475569"/>
+  </g>
+  
+  <!-- CV Builder badge -->
+  <text x="64" y="115" text-anchor="middle" font-family="'Inter', Arial, sans-serif" font-size="12" font-weight="600" fill="rgba(255,255,255,0.9)">CV BUILDER</text>
+  
+  <!-- Subtle glow effect -->
+  <circle cx="64" cy="64" r="65" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="8"/>
+</svg>
