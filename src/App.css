@@ -1,21 +1,89 @@
-#root {
-    max-width: 1280px;
-    margin: 0 auto;
-    padding: 2rem;
-    text-align: center;
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
-main {
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f2f2f2;
+}
+
+.container {
     display: flex;
+    gap: 20px;
+    padding: 20px;
+    background-color: #000;
+    min-height: 100vh;
 }
 
-.preview {
-    background: #f5f5f5;
+.forms {
+    width: 40%;
+    background-color: #0000;
+    color: white;
+    padding: 20px;
+    border-radius: 6px;
+    overflow-y: auto;
+}
+
+.forms h2 {
+    margin-bottom: 10px;
+    margin-top: 20px;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 5px;
+}
+
+.general-info,
+.educational-info,
+.exp-info {
+    margin-bottom: 20px;
+    background-color: #222;
+    border-radius: 7px;
     padding: 20px;
 }
 
+input,
+textarea {
+    width: 100%;
+    padding: 8px;
+    margin: 6px 0 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+textarea {
+    resize: vertical;
+}
+
+label {
+    font-size: 14px;
+    font-weight: bold;
+}
+
+button {
+    padding: 8px 12px;
+    border: none;
+    border-radius: 4px;
+    background-color: #222;
+    color: white;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+button:hover {
+    background-color: #444;
+}
+
+.preview {
+    width: 60%;
+    background-color: rgb(34, 33, 24);
+    padding: 20px;
+    overflow-y: auto;
+}
+
 .resume {
-    background: white;
+    background: #ffffff;
     max-width: 800px;
     margin: auto;
     padding: 40px;
@@ -26,21 +94,21 @@ main {
 
 .resume-header {
     text-align: center;
+    margin-bottom: 20px;
 }
 
 .resume-header h1 {
     font-size: 32px;
-    margin-bottom: 5px;
+    margin-bottom: 6px;
 }
 
 .resume-header p {
+    font-size: 14px;
     margin: 2px 0;
 }
 
-hr {
-    margin: 20px 0;
-    border: none;
-    border-top: 1px solid black;
+.resume-section {
+    margin-top: 20px;
 }
 
 .resume-section h2 {
@@ -49,26 +117,48 @@ hr {
 }
 
 .resume-item {
-    margin-bottom: 15px;
+    margin-bottom: 18px;
+    margin-left: 20px;
 }
 
 .resume-item h3 {
     font-size: 18px;
-    margin: 0;
+    margin-bottom: 4px;
 }
 
 .resume-item h4 {
     font-size: 16px;
-    margin: 2px 0;
     font-weight: bold;
 }
 
-.label {
+.resume-item .label {
+    margin-left: 20px;
     font-weight: bold;
-    margin-top: 5px;
 }
 
-.date {
+.resume-item .description {
+    margin-left: 40px;
+}
+
+.resume-item .date {
+    margin-left: 20px;
     font-style: italic;
-    font-size: 14px;
+    font-size: 13px;
+}
+
+hr {
+    border: none;
+    border-top: 1px solid #000;
+    margin: 20px 0;
+}
+
+@media (max-width: 900px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .forms,
+    .preview {
+        width: 100%;
+    }
 }

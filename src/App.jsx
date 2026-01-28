@@ -1,8 +1,8 @@
 import { useState } from 'react'
-import EducationDetails from './components/eduDetails';
-import ExperienceDetails from './components/expDetails';
-import GeneralInfo from './components/generalDetails';
-import Preview from './components/preview';
+import EducationDetails from './components/EducationDetails';
+import ExperienceDetails from './components/ExperienceDetails';
+import GeneralInfo from './components/GeneralDetails';
+import Preview from './components/Preview';
 import './App.css'
 
 const defaultValues = {
@@ -52,7 +52,7 @@ function App() {
     }
 
     return (
-        <main>
+        <div className='container'>
             <div className='forms'>
                 <div className='general-info'>
                     <h2>General Info</h2>
@@ -87,7 +87,7 @@ function App() {
                     experiences={experiences}
                 />
             </div>
-        </main>
+        </div>
     )
 }
 

@@ -1,16 +1,26 @@
-function ExperienceDetails(info, setinfo) {
+import { useState } from 'react';
+
+function ExperienceDetails({info, setinfo}) {
+    const [localExp, setLocalExp] = useState(info);
+
     function handleChange(e) {
-        setinfo({ ...info, [e.target.name]: e.target.value });
+        const { name, value } = e.target;
+        setLocalExp({ ...localExp, [name]: value });
+    }
+
+    function handleSubmit(e) {
+        e.preventDefault();
+        setinfo(localExp);
     }
 
     return (
-        <div>
+        <form onSubmit={handleSubmit}>
             <label htmlFor="company-name">Company Name: </label>
             <input
                 type="text"
                 id="company-name"
                 name="companyName"
-                value={info.companyName}
+                value={localExp.companyName}
                 onChange={handleChange} />
 
             <label htmlFor="position-name">Position: </label>
@@ -18,7 +28,7 @@ function ExperienceDetails(info, setinfo) {
                 type="text"
                 id="position-name"
                 name="position"
-                value={info.position}
+                value={localExp.position}
                 onChange={handleChange} />
 
             <label htmlFor="description">Description: </label>
@@ -27,7 +37,7 @@ function ExperienceDetails(info, setinfo) {
                 name="description"
                 rows="5"
                 cols="33"
-                value={info.description}
+                value={localExp.description}
                 onChange={handleChange} >
             </textarea>
 
@@ -35,7 +45,7 @@ function ExperienceDetails(info, setinfo) {
             <input
                 type="month"
                 id="start-date"
-                value={info.startDate}
+                value={localExp.startDate}
                 name="startDate"
                 onChange={handleChange} />
 
@@ -43,10 +53,12 @@ function ExperienceDetails(info, setinfo) {
             <input
                 type="month"
                 id="end-date"
-                value={info.endDate}
+                value={localExp.endDate}
                 name="endDate"
                 onChange={handleChange} />
-        </div>
+
+            <button type="submit">Save Education</button>
+        </form>
     )
 }
 
