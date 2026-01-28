@@ -2,38 +2,93 @@ import { useState } from 'react'
 import EducationDetails from './components/eduDetails';
 import ExperienceDetails from './components/expDetails';
 import GeneralInfo from './components/generalDetails';
+import Preview from './components/preview';
 import './App.css'
 
 const defaultValues = {
-  fullName: "LeLouch Lamperouge",
-  email: "lelouch@gmail.com",
-  phoneNo: "9234000000",
+    fullName: "LeLouch Lamperouge",
+    email: "lelouch@gmail.com",
+    phoneNo: "9234000000",
 };
 
-function AddnewEducation(info, setinfo) {
-  return (
-    <EducationDetails info={info} setinfo={setinfo} />
-  )
+const emptyExperiences = {
+    companyName: "",
+    position: "",
+    description: "",
+    startDate: "",
+    endDate: "",
 }
 
+const emptyEducation = {
+    school: "",
+    degree: "",
+    startDate: "",
+    endDate: "",
+};
+
 function App() {
-  const [info, setinfo] = useState(defaultValues);
-  // const [countEdu, setcountEdu] = useState(0);
-  return (
-    <>
-      <main>
-        <div className='forms'>
-          <GeneralInfo info={info} setinfo={setinfo} />
-          <EducationDetails info={info} setinfo={setinfo} />
-          <button onClick={<AddnewEducation info={info} setinfo={setinfo} />} name='newEducation'>+ Add New Education</button>
+    const [info, setinfo] = useState(defaultValues);
+    const [educations, setEducation] = useState([{ ...emptyEducation }]);
+    const [experiences, setExperiences] = useState([{ ...emptyExperiences }]);
 
-        </div>
-        <div className='preview'>
+    function addEducation() {
+        setEducation([...educations, { ...emptyEducation }]);
+    }
 
-        </div>
-      </main>
-    </>
-  )
+    function addExperience() {
+        setExperiences([...experiences, { ...emptyExperiences }]);
+    }
+
+    function updateEducation(updatedEdu, index) {
+        const newEducations = [...educations];
+        newEducations[index] = updatedEdu;
+        setEducation(newEducations);
+    }
+
+    function updateExperiences(updatedExp, index) {
+        const newExperiences = [...experiences];
+        newExperiences[index] = updatedExp;
+        setExperiences(newExperiences);
+    }
+
+    return (
+        <main>
+            <div className='forms'>
+                <div className='general-info'>
+                    <h2>General Info</h2>
+                    <GeneralInfo info={info} setinfo={setinfo} />
+                </div>
+
+                <div className='educational-info'>
+                    <h2>Educational Information</h2>
+                    {educations.map((edu, index) => (
+                        <EducationDetails
+                            key={index}
+                            info={edu}
+                            setinfo={(updatedEdu) => updateEducation(updatedEdu, index)}
+                        />
+                    ))}
+                    <button onClick={addEducation} name='edu'>+ Add New Education</button>
+                </div>
+
+                <div className='exp-info'>
+                    <h2>Experience Information</h2>
+                    {experiences.map((exp, i) => (
+                        <ExperienceDetails key={i} info={exp} setinfo={(updatedExp) => updateExperiences(updatedExp, i)} />
+                    ))}
+                    <button onClick={addExperience}>+ Add New Experience</button>
+                </div>
+            </div>
+
+            <div className="preview">
+                <Preview
+                    info={info}
+                    educations={educations}
+                    experiences={experiences}
+                />
+            </div>
+        </main>
+    )
 }
 
 export default App
