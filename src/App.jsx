@@ -86,6 +86,11 @@ function App() {
                     educations={educations}
                     experiences={experiences}
                 />
+                <div id='export-btn'>
+                    <button onClick={() => window.print()}>
+                        Print / Save as PDF
+                    </button>
+                </div>
             </div>
         </div>
     )

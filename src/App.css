@@ -1,16 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
 
-body {
-    font-family: Arial, Helvetica, sans-serif;
-    background-color: #f2f2f2;
+:root {
+    font-family: 'Inter', Arial, Helvetica, sans-serif;
+    min-height: 100vh;
 }
 
 .container {
     display: flex;
+    background: linear-gradient(135deg, #0f2027 0%, #203a43 50%, #2c5364 100%); 
     gap: 20px;
     padding: 20px;
     background-color: #000;
@@ -19,37 +22,53 @@ body {
 
 .forms {
     width: 40%;
-    background-color: #0000;
+    background-color: rgb(16, 19, 18);
     color: white;
     padding: 20px;
-    border-radius: 6px;
+    border-radius: 12px;
     overflow-y: auto;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
 }
 
 .forms h2 {
     margin-bottom: 10px;
     margin-top: 20px;
-    border-bottom: 1px solid #ddd;
-    padding-bottom: 5px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    padding-bottom: 8px;
+    color: #fff;
+    font-weight: 600;
 }
 
 .general-info,
 .educational-info,
 .exp-info {
     margin-bottom: 20px;
-    background-color: #222;
-    border-radius: 7px;
+    background: rgba(34, 34, 34, 0.6);
+    border-radius: 12px;
     padding: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 input,
 textarea {
     width: 100%;
-    padding: 8px;
-    margin: 6px 0 12px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
+    padding: 12px;
+    margin: 8px 0 16px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
     font-size: 14px;
+    background: rgba(255, 255, 255, 0.08);
+    color: #fff;
+    transition: all 0.3s ease;
+}
+
+input:focus,
+textarea:focus {
+    outline: none;
+    border-color: #4facfe;
+    background: rgba(255, 255, 255, 0.12);
+    box-shadow: 0 0 0 3px rgba(79, 172, 254, 0.1);
 }
 
 textarea {
@@ -58,21 +77,25 @@ textarea {
 
 label {
     font-size: 14px;
-    font-weight: bold;
+    font-weight: 500;
+    color: #e0e0e0;
 }
 
 button {
-    padding: 8px 12px;
+    padding: 12px 20px;
     border: none;
-    border-radius: 4px;
-    background-color: #222;
+    border-radius: 8px;
+    background: linear-gradient(45deg, #667eea 0%, #764ba2 100%);
     color: white;
     cursor: pointer;
     margin-top: 10px;
+    font-weight: 500;
+    transition: all 0.3s ease;
 }
 
 button:hover {
-    background-color: #444;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 30px rgba(102, 126, 234, 0.4);
 }
 
 .preview {
@@ -80,6 +103,7 @@ button:hover {
     background-color: rgb(34, 33, 24);
     padding: 20px;
     overflow-y: auto;
+    background: rgba(20, 20, 20, 0.9);
 }
 
 .resume {
@@ -129,6 +153,7 @@ button:hover {
 .resume-item h4 {
     font-size: 16px;
     font-weight: bold;
+    margin-left: 12px;
 }
 
 .resume-item .label {
@@ -146,9 +171,14 @@ button:hover {
     font-size: 13px;
 }
 
+#export-btn {
+    text-align: center;
+    margin: 20px;
+}
+
 hr {
     border: none;
-    border-top: 1px solid #000;
+    border-top: 1px solid #bbb; 
     margin: 20px 0;
 }
 
@@ -160,5 +190,28 @@ hr {
     .forms,
     .preview {
         width: 100%;
+    }
+}
+
+@media print {
+    body * {
+        visibility: hidden;
+    }
+
+    #resume,
+    #resume * {
+        visibility: visible;
+    }
+
+    #resume {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        border: none !important; 
+        outline: none !important;
+        box-shadow: none !important;
     }
 }
