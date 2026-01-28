@@ -1,8 +1,8 @@
 import { useState } from 'react'
 import EducationDetails from './components/EducationDetails';
 import ExperienceDetails from './components/ExperienceDetails';
-import GeneralInfo from './components/GeneralDetails';
-import Preview from './components/Preview';
+import GeneralInfo from './components/GeneralDetail';
+import Preview from './components/Previews';
 import './App.css'
 
 const defaultValues = {
