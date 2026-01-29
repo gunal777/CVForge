@@ -22,10 +22,10 @@ Users can enter their personal details, education, and experience, preview the r
 ```
 src/
 ├── components/
-│   ├── eduDetails.jsx
-│   ├── expDetails.jsx
-│   ├── generalDetails.jsx
-│   └── preview.jsx
+│   ├── EducationDetails.jsx
+│   ├── ExperienceDetails.jsx
+│   ├── GeneralDetail.jsx
+│   └── Previews.jsx
 ├── App.jsx
 ├── App.css
 ├── main.jsx
